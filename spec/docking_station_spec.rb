@@ -36,6 +36,4 @@ describe DockingStation do
     20.times { subject.dock(bike) }
     expect { subject.dock(bike) }.to raise_error(ArgumentError, "Dock full")
   end
-
-
 end
