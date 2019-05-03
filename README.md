@@ -1,3 +1,7 @@
+Transport for London, the body responsible for delivery of a new bike system, come to you with a plan: a network of docking stations and bikes that anyone can use. They want you to build a program that will emulate all the docking stations, bikes, and infrastructure (repair staff, and so on) required to make their dream a reality.
+
+User Stories:
+
 As a user,
 So I can find customers,
 I want to search for my customers by their surnames.
@@ -30,3 +34,7 @@ So I can decide whether to use the docking station
 I want to see a bike that has been docked
 
 docking_station - bikes_available?
+
+As a member of the public,
+So that I am not confused and charged unnecessarily,
+I'd like docking stations not to release bikes when there are none available.
