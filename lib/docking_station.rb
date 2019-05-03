@@ -6,11 +6,13 @@ class DockingStation
   end
 
   def release_bike
-    raise "No bikes in dock" if bikes.empty?
-    Bike.new
+    raise ArgumentError, "No bikes in dock" if bikes.empty?
+    bikes.pop
+    #Bike.new
   end
 
   def dock(bike)
+    raise ArgumentError, "Dock full" if bikes.length >= 20
     bikes << bike
     "Bike docked"
   end

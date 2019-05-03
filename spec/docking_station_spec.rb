@@ -1,7 +1,8 @@
 require 'docking_station'
 
 describe DockingStation do
-  it 'does it respond to release' do
+
+  it 'responds to release' do
     expect(subject).to respond_to(:release_bike)
   end
 
@@ -22,12 +23,19 @@ describe DockingStation do
     expect(subject.list_bikes).to eq([bike])
   end
 
-  it 'raise error if no bikes to release' do
+  it 'raise an error if no bikes to release' do
     expect {
       if subject.bikes.empty?
         subject.release_bike
       end
-    }.to raise_error
+    }.to raise_error(ArgumentError, "No bikes in dock")
   end
+
+  it 'raise an error if docking station is full' do
+    bike = Bike.new
+    20.times { subject.dock(bike) }
+    expect { subject.dock(bike) }.to raise_error(ArgumentError, "Dock full")
+  end
+
 
 end
